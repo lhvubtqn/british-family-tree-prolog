@@ -153,7 +153,20 @@ aunt(Person, NieceNephew) :-
     aunt_uncle(Person, NieceNephew).
 nephew(Person, AuntUncle) :-
     male(Person),
-    aunt_uncle(AuntUncle, Person).
+    (
+        aunt_uncle(AuntUncle, Person);
+        (
+            husband(Person, Wife),
+            aunt_uncle(AuntUncle, Wife)
+        )
+    ).
 niece(Person, AuntUncle) :-
     female(Person),
-    aunt_uncle(AuntUncle, Person).
+    (
+        aunt_uncle(AuntUncle, Person);
+        (
+            wife(Person, Husband),
+            aunt_uncle(AuntUncle, Husband)
+        )
+    ).
+
