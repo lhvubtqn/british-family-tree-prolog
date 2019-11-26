@@ -136,10 +136,10 @@ sibling(Person1, Person2) :-
     distinct(sibling_duplicate(Person1, Person2)).
 brother(Person, Sibling) :-
     male(Person),
-    sibling(Person, Sibling).
+    distinct(sibling(Person, Sibling)).
 sister(Person, Sibling) :-
     female(Person),
-    sibling(Person, Sibling).
+    distinct(sibling(Person, Sibling)).
 aunt_uncle(Person, NieceNephew) :-
     (sibling(Person, Sibling);
     (married(Person, Person1),
@@ -157,4 +157,3 @@ nephew(Person, AuntUncle) :-
 niece(Person, AuntUncle) :-
     female(Person),
     aunt_uncle(AuntUncle, Person).
-
