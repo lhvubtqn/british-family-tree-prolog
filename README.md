@@ -1,3 +1,5 @@
-## Author: Hoang-Vu Le
-## University of Science.
+__Author: Hoang-Vu Le__
+
+__University of Science.__
+
 An assignment about prolog programming.
